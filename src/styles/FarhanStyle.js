@@ -14,8 +14,15 @@ const styles = StyleSheet.create({
     image: {
         flex: 1,
         justifyContent: 'center',
-        width: 390,
-        height: 844,
+        width: 393,
+        height: 803,
+    },
+
+    detailsImg: {
+            flex: 1,
+            justifyContent: 'center',
+            width: 393,
+            height: 844,
     },
 
     divider: {
@@ -177,6 +184,22 @@ const styles = StyleSheet.create({
         fontFamily: "CroissantOne",
     },
     
+    welcomeText: {
+        position: 'absolute',
+        top: 681,
+        left: 110,
+        height: 304,
+        width: 800,
+        fontFamily: "CroissantOne",
+    },
+    
+    disco: {
+        position: 'absolute',
+        width: 68,
+        height: 70,
+        top: 44,
+        left: 150,
+    }
 
 });
 

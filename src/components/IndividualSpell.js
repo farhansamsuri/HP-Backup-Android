@@ -1,8 +1,9 @@
 import API from "../../API";
 import { useEffect, useState} from "react";
-import { View, Text, ImageBackground, TouchableOpacity } from 'react-native';
+import { View, Text, ImageBackground, TouchableOpacity, Image } from 'react-native';
 import styles from "../styles/FarhanStyle";
-import detailsBg from "../../assets/detailsbg.png";
+import detailsBg from "../../assets/detailsbg2.png";
+import disco from '../../assets/circle3.gif';
 import { useFonts } from 'expo-font';
 import { useRoute } from "@react-navigation/native";
 import { useNavigation } from '@react-navigation/native';
@@ -39,10 +40,13 @@ const IndividualSpell = (props) => {
 
     return (
         <View style={styles.container}>
+            
             <ImageBackground 
                 source={detailsBg}
                 resizeMode="cover"
-                style= {styles.image}>
+                style= {styles.detailsImg}>
+                    <Image source={disco}
+                style={styles.disco} />
                     <View style={styles.box}>
             <Text style={styles.magicText}>{filteredSpell[0] ? filteredSpell[0].name : 'Nil'}</Text>
             </View>

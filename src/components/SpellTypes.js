@@ -1,3 +1,4 @@
+import React from 'react';
 import { View, Text, TouchableOpacity, ImageBackground } from 'react-native';
 import { useFonts } from 'expo-font';
 
@@ -6,7 +7,7 @@ import bgBar from "../../assets/categorybar.png";
 import bgImage from "../../assets/bgImage2.png";
 import { useNavigation } from '@react-navigation/native';
 
-const SpellTypes = (props) => {
+const SpellTypes = () => {
 
     //Navigation
     const navigation = useNavigation();
@@ -19,9 +20,6 @@ const SpellTypes = (props) => {
         return null;
       }
 
-    //For parent container
-    const click = props.result;
-
     return (
         <View>
 
@@ -29,71 +27,75 @@ const SpellTypes = (props) => {
                 style={styles.bg}
                 source={bgImage}>
 
-                <TouchableOpacity
-                    onPress={() => {/* click.setSpellType('Transfiguration') */;
-                        navigation.navigate('SpellList', {spellType: 'Transfiguration'})}}
-                        >
-                    <ImageBackground
+                <ImageBackground
                         source={bgBar}
                         style={styles.bar1}>
-                        <Text style={styles.text}>TRANSFIGURATION</Text>
-                    </ImageBackground>
-                </TouchableOpacity>
-
                 <TouchableOpacity
-                    onPress={() => {/* click.setSpellType('Charm') */;
-                    navigation.navigate('SpellList', {spellType: 'Charm'})}}
-                    >
-                    <ImageBackground
+                    onPress={() => {navigation.navigate('SpellList', {spellType: 'Transfiguration'})}}
+                    hitSlop={{top: 10, bottom: 10, left: 50, right: 40}}>
+                    
+                        <Text style={styles.text}>TRANSFIGURATION</Text>
+                        </TouchableOpacity>
+                    </ImageBackground>
+
+                <ImageBackground
                         source={bgBar}
                         style={styles.bar2}>
-                        <Text style={styles.text}>CHARM</Text>
-                    </ImageBackground>
-                </TouchableOpacity>
-
                 <TouchableOpacity
-                    onPress={() => {/* click.setSpellType('Jinx') */;
-                    navigation.navigate('SpellList', {spellType: 'Jinx'})}}
-                    >
-                    <ImageBackground
+                    onPress={() => {navigation.navigate('SpellList', {spellType: 'Charm'})}}
+                    hitSlop={{top: 10, bottom: 10, left: 90, right: 90}}>
+                    
+                        <Text style={styles.text}>CHARM</Text>
+                        </TouchableOpacity>
+                    </ImageBackground>
+
+                <ImageBackground
                         source={bgBar}
                         style={styles.bar3}>
-                        <Text style={styles.text}>JINX</Text>
-                    </ImageBackground>
-                </TouchableOpacity>
-
                 <TouchableOpacity
-                    onPress={() => {/* click.setSpellType('Hex') */;
-                    navigation.navigate('SpellList', {spellType: 'Hex'})}}
-                    >
-                    <ImageBackground
+                    onPress={() => {navigation.navigate('SpellList', {spellType: 'Jinx'})}}
+                    hitSlop={{top: 10, bottom: 10, left: 90, right: 90}}>
+                    
+                        <Text style={styles.text}>JINX</Text>
+                        </TouchableOpacity>
+                    </ImageBackground>
+
+
+                <ImageBackground
                         source={bgBar}
                         style={styles.bar4}>
-                        <Text style={styles.text}>HEX</Text>
-                    </ImageBackground>
-                </TouchableOpacity>
-
                 <TouchableOpacity
-                    onPress={() => {/* click.setSpellType('CounterSpell') */;
-                    navigation.navigate('SpellList', {spellType: 'CounterSpell'})}}
-                    >
-                    <ImageBackground
+                    onPress={() => {navigation.navigate('SpellList', {spellType: 'Hex'})}}
+                    hitSlop={{top: 10, bottom: 10, left: 90, right: 90}}>
+                    
+                        <Text style={styles.text}>HEX</Text>
+                        </TouchableOpacity>
+                    </ImageBackground>
+
+
+                <ImageBackground
                         source={bgBar}
                         style={styles.bar5}>
-                        <Text style={styles.text}>COUNTER-SPELL</Text>
-                    </ImageBackground>
-                </TouchableOpacity>
-
                 <TouchableOpacity
-                    onPress={() => {/* click.setSpellType('HealingSpell') */;
-                    navigation.navigate('SpellList', {spellType: 'HealingSpell'})}}
-                    >
-                    <ImageBackground
+                    onPress={() => {navigation.navigate('SpellList', {spellType: 'CounterSpell'})}}
+                    hitSlop={{top: 10, bottom: 10, left: 30, right: 30}}>
+                    
+                        <Text style={styles.text}>COUNTER-SPELL</Text>
+                        </TouchableOpacity>
+                    </ImageBackground>
+                <ImageBackground
                         source={bgBar}
                         style={styles.bar6}>
+                <TouchableOpacity
+                    onPress={() => {navigation.navigate('SpellList', {spellType: 'HealingSpell'})}}
+                    hitSlop={{top: 10, bottom: 10, left: 30, right: 30}}>
+                    
                         <Text style={styles.text}>HEALING SPELL</Text>
+                        </TouchableOpacity>
                     </ImageBackground>
-                </TouchableOpacity>
+                
+                
+
 
             </ImageBackground>
         </View>

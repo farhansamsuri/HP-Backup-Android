@@ -44,11 +44,11 @@ const SpellList = (props) => {
         getSpellList();
         setSpellType(route.params? route.params.spellType : spellType);
 
-        if (props.spellType === "CounterSpell") {
+        if (spellType === "CounterSpell") {
             setSpellType(['CounterSpell', 'CounterJinx', 'CounterCharm', 'Untransfiguration']) 
          }   
          
-    }, [spellTypeDisplay, fontsLoaded]);
+    }, [spellTypeDisplay]);
 
     
 
@@ -76,7 +76,7 @@ const SpellList = (props) => {
                         style = {styles.bar}>
                             <View style={styles.divider}></View>
                             <View style={styles.divider2}></View>
-                            <Text style={styles.header}>{spellType}</Text>
+                            <Text style={styles.header}>{route.params.spellType}</Text>
                             <View style={styles.divider3}></View>
                             <View style={styles.divider4}></View>
                         </ImageBackground>
@@ -92,7 +92,7 @@ const SpellList = (props) => {
                             </FlatList>
                             </View>
                 <View style={styles.return2}>
-                    <TouchableOpacity onPress={() => {navigation.navigate ('SpellType')}}>
+                    <TouchableOpacity onPress={() => {navigation.navigate ('SpellTypes')}}>
                     <Text style={styles.magicText3}>Return to previous page
                     </Text>
                     </TouchableOpacity>
