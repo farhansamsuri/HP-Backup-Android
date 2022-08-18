@@ -31,8 +31,6 @@ const IndividualSpell = (props) => {
     useEffect(() => {
         getSpellList();
     }, []);
-
-    console.log('spellName', uniqueSpellName)
       
       if (!fontsLoaded) {
         return null;
